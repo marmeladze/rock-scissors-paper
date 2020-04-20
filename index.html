@@ -5,22 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Rock Scissors Paper</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            One of three columns
-          </div>
-          <div class="col-md-4">
-            One of three columns
-          </div>
-          <div class="col-md-4">
-            One of three columns
-          </div>
+            <div class="col-md-4 offset-md-4">
+                <div class="alert alert-sucess" role="alert" id="result-board">
+                    Result
+                </div>                
+            </div>
         </div>
+
+
+        <div class="row">
+
+          <div class="col-md-4">
+            <div class="card" data-value="rock">
+                <img class="card-img-top" src="images/rock.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Rock</h5>
+                </div>
+              </div>              
+          </div>
+
+          <div class="col-md-4">
+            <div class="card" data-value="scissors">
+                <img class="card-img-top" src="images/scissors.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Scissors</h5>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card" data-value="paper">
+                <img class="card-img-top" src="images/paper.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Paper</h5>
+                </div>
+              </div>
+          </div>
+
+        </div>
+
       </div>
-      
+      <script src="js/logic.js"></script>
+      <script src="js/main.js"></script>
+        
 </body>
 </html>

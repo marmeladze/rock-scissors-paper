@@ -1,40 +1,29 @@
-const choices = ["rock", "scissors", "paper"];
-
-const computer_choice = (array_of_choices) => array_of_choices[Math.floor((Math.random()*array_of_choices.length))];
-
-const decide_winner = (p1, p2) => {
-    /**
-     * 0 - tie
-     * 1 - p1
-     * 2 - p2
-    */
-    switch(p1) {
-        case "rock":
-            return p2 == "scissors" ? 1 : (p2 == "paper") ? 2 : 0
-            break;
-        case "scissors":
-            return p2 == "paper" ? 1 : (p2 == "rock") ? 2 : 0
-            break;
-        case "paper":
-            return p2 == "rock" ? 1 : (p2 == "scissors") ? 2 : 0
-            break;
-        default:
-            alert("something wrong");
-    }
+function result_board(arr) {
+    let comp = arr[0];
+    let res = arr[1];
+    document.querySelector("#result-board").innerHTML = "</p><strong>Computer chooses "+comp+"</strong>   "+ res+"</p>";
 }
 
-let user_choice = prompt("Rock, scissors, paper? ");
-let computer_choice = computer_choice(choices);
 
-let result = decide_winner(user_choice, computer_choice);
+let elements = document.querySelectorAll(".card")
 
-if(result == 1) {
-    alert("Human wins");
-} else if (result == 2) {
-    alert("Computer wins");
-} else if(result ==0 ) {
-    alert("Tie");
-} else {
-    alert("Something wrong")
+for(var i=0; i < elements.length; i++) {
+    let card = elements[i];
+    card.addEventListener("click", function(){
+        let result_text = "";
+        let user_choice = card.dataset.value;
+        let comp_choice = computer_choice(choices);
+        let result = decide_winner(user_choice, comp_choice);
+        if(result == 1) {
+            result_text = "Human wins";
+        } else if (result == 2) {
+            result_text = "Computer wins";
+        } else if(result == 0 ) {
+            result_text = "Tie";
+        } else {
+            alert("Something wrong");
+        }
+        return result_board([comp_choice, result_text]);
+    });
 }
 
