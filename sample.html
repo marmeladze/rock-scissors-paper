@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div></div>
+        <textarea>Lorem ipsum</textarea>
+        <input id="user" type="text" value=""">        
+        <input id="computer" type="text" value="">
+        <button>Click me</button>
+    </div>
+
+    <script>
+        function randomize() {
+            let inputs = document.querySelectorAll("input")
+            
+            for(let i=0; i < inputs.length; i++) {
+                inputs[i].value = Math.random()
+            }
+
+        }
+        
+
+        document.querySelector("button").addEventListener("click", randomize);
+
+        document.querySelector("#user").addEventListener("mouseenter", function(e) {
+            e.target.value ="Mouse is over me"+Math.random();
+        });
+        document.querySelector("#computer").addEventListener("mouseenter", function(e) {
+            e.target.value = "Mouse is over me"+Math.random();
+        });
+
+    </script>
+
+</body>
+</html>
